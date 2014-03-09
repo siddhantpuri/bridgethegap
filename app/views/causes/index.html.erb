@@ -1,0 +1,183 @@
+<%- model_class = Cause -%>
+<!--<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:dateCreated) %></th>
+      <th><%= model_class.human_attribute_name(:creator) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:tagline) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @causes.each do |cause| %>
+      <tr>
+        <td><%= link_to cause.id, cause_path(cause) %></td>
+        <td><%= cause.name %></td>
+        <td><%= cause.dateCreated %></td>
+        <td><%= cause.creator %></td>
+        <td><%= cause.description %></td>
+        <td><%= cause.tagline %></td>
+        <td><%=l cause.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_cause_path(cause), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      cause_path(cause),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_cause_path,
+            :class => 'btn btn-primary' %>
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Social Causes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS for the 'Thumbnail Gallery' Template -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+
+                    <a class="btn btn-navbar m-btn blue" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+
+                    <h1 class="brand">
+                        <a href="index.html">
+                            <img src="img/bootmetrologo.png" alt="">
+                        </a>                            
+                    </h1>
+            
+                    <div class="nav-collapse">
+                        <ul class="nav pull-right">
+                          <li><a href="/" class="anchorLink">Home</a></li>
+                          <li><a href="/causes" class="anchorLink">Browse</a></li>
+                          <li><a href="/users/sign_in" class="anchorLink">Login</a></li>
+                          <li><a href="/users/sign_up" class="anchorLink">Signup</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">Social Causes
+                    <small>The Most Popular Student Groups on Campus<span class="pull-right"><%= link_to t('.new cause', :default => t("helpers.links.Add Cause")), new_cause_path, :class => 'btn btn-success' %></span></small>
+                </h1>
+                
+
+            </div>
+
+        </div>
+
+        <% @causes.each do |cause| %>
+
+        <div class="row">
+
+            <div class="col-lg-7 col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                </a>
+
+            </div>
+
+            <div class="col-lg-5 col-md-5">
+                <h3><%= cause.name %></h3>
+                <h4><%= cause.tagline %></h4>
+                <p><%= cause.description %></p>
+                <h4><%= pluralize cause.reputation_for(:votes).to_i, "vote" %></h4>
+                <a class="btn btn-primary" href="/causes/<%=cause.id%>">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <% end %>
+
+        <div class="row text-center">
+
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a>
+
+                    </li>
+                    <li class="active"><a href="#">1</a>
+                    </li>
+                    <li><a href="#">2</a>
+                    </li>
+                    <li><a href="#">3</a>
+                    </li>
+
+                    <li><a href="#">4</a>
+                    </li>
+                    <li><a href="#">5</a>
+                    </li>
+                    <li><a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Company 2013</p>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

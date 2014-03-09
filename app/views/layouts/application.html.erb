@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bridge The Gap</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header pull-left">
+            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%= link_to "BridgeTheGap@Berkeley", Rails.root.to_s, :class=> "navbar-brand" %>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav pull-right">
+                	<li><a href="/causes">Browse Projects</a>
+                    </li>
+                    <% if user_signed_in? %>
+    					<li><%= current_user.email %>. Not you?</li>
+    					<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    					</li>
+  					<% else %>
+    				<li><%= link_to "Sign up", new_user_registration_path %></li>
+    				</li><%= link_to "Log in", new_user_session_path %></li>
+  					<% end %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+
+    </nav>
+
+<div style="margin-top:3%">
+
+<%= yield %>
+
+</div>
+</body>
+</html>
