@@ -25,7 +25,8 @@
               </li>
             <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
-            </li><%= link_to "Log in", new_user_session_path %></li>
+            </li>
+            <li><%= link_to "Log in", new_user_session_path %></li>
             <% end %>
                         </ul>
                     </div>
@@ -33,7 +34,7 @@
                 </div>
             </div>
         </nav>
-
+<div>
 
 
 <h2>Sign in</h2>
@@ -54,3 +55,5 @@
 <% end %>
 
 <%= render "links" %>
+
+</div>

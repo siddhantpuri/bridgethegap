@@ -25,7 +25,8 @@
               </li>
             <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
-            </li><%= link_to "Log in", new_user_session_path %></li>
+            </li>
+            <li><%= link_to "Log in", new_user_session_path %></li>
             <% end %>
                         </ul>
                     </div>
@@ -33,6 +34,7 @@
                 </div>
             </div>
         </nav>
+        <div id="someid">
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -59,3 +61,5 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
 <%= link_to "Back", :back %>
+
+</div>
