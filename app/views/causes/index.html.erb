@@ -52,6 +52,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta charset="UTF-8"/> 
+        <style type="text/css"> 
+            html { 
+                background: url(http://cjpstudio.com/wp-content/uploads/2011/12/cityrock1.jpg) no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            #background-color   {
+                width: 100%;
+                height: 100%;
+                background-color: #000000;
+            }       
+        </style>
+
 
     <title>Social Causes</title>
 
@@ -65,7 +82,7 @@
 
 <body>
 
-<nav class="navbar navbar-fixed-top">
+<nav class="navbar navbar-fixed-top navbar-inverse">
             <div class="navbar-inner">
                 <div class="container">
 
@@ -77,8 +94,8 @@
 
 
                     <h1 class="brand">
-                        <a href="index.html">
-                            <img src="img/bootmetrologo.png" alt="">
+                        <a href="/">
+                            <%=image_tag("logo.jpg",size:'160x100') =%>                            
                         </a>                            
                     </h1>
             
@@ -112,14 +129,14 @@
 
         <div class="row">
 
-            <div class="col-lg-7 col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+            <div class="col-lg-5 col-md-5">
+              <div class="thumbnail tile tile-double tile-orange">
+                <a href="#" >
+                  <h1 class="tile-text">
+                    I'm the 2!</h1>
                 </a>
-
             </div>
 
-            <div class="col-lg-5 col-md-5">
                 <h3><%= cause.name %></h3>
                 <h4><%= cause.tagline %></h4>
                 <p><%= cause.description %></p>
@@ -130,36 +147,12 @@
 
         </div>
 
-        <hr>
 
         <% end %>
 
-        <div class="row text-center">
+        
 
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li><a href="#">&laquo;</a>
-
-                    </li>
-                    <li class="active"><a href="#">1</a>
-                    </li>
-                    <li><a href="#">2</a>
-                    </li>
-                    <li><a href="#">3</a>
-                    </li>
-
-                    <li><a href="#">4</a>
-                    </li>
-                    <li><a href="#">5</a>
-                    </li>
-                    <li><a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <hr>
+        
 
         <footer>
             <div class="row">
