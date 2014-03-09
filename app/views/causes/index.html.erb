@@ -131,17 +131,17 @@
 
             <div class="col-lg-5 col-md-5">
               <div class="thumbnail tile tile-double tile-orange">
-                <a href="#" >
+                <a href="/causes/<%=cause.id%>" >
                   <h1 class="tile-text">
-                    I'm the 2!</h1>
+                    <%= cause.name %></h1>
                 </a>
             </div>
 
-                <h3><%= cause.name %></h3>
-                <h4><%= cause.tagline %></h4>
-                <p><%= cause.description %></p>
-                <h4><%= pluralize cause.reputation_for(:votes).to_i, "vote" %></h4>
-                <a class="btn btn-primary" href="/causes/<%=cause.id%>">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <!-- <h3><%= cause.name %></h3> -->
+                <!-- <h4><%= cause.tagline %></h4> -->
+                <!-- <p><%= cause.description %></p> -->
+                <!-- <h4><%= pluralize cause.reputation_for(:votes).to_i, "vote" %></h4> -->
+                <!-- <a class="btn btn-primary" href="/causes/<%=cause.id%>">View Project <span class="glyphicon glyphicon-chevron-right"></span></a> -->
 
             </div>
 
